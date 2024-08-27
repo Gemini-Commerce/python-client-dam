@@ -308,7 +308,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -582,7 +581,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -856,7 +854,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -1130,7 +1127,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -1404,7 +1400,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -1678,7 +1673,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -1952,7 +1946,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -2226,7 +2219,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -2500,7 +2492,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -2774,7 +2765,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -3048,7 +3038,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -3322,7 +3311,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -3596,7 +3584,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
@@ -3870,7 +3857,6 @@ class BasicOperationsApi:
 
         # authentication setting
         _auth_settings: List[str] = [
-            'Authorization'
         ]
 
         return self.api_client.param_serialize(
