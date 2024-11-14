@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tenant_id**| **str** |   |
-**type**| [**DamAssetType**](DamAssetType.md) |  for more information please, see Model/DamAssetType.php  |
+**type**| [**DamAssetType**](DamAssetType.md) |  for more information please, see Model/DamAssetType.php  | [default to DamAssetType.UNKNOWN]
 **code**| **str** |   |
 **metadata**| [**List[AssetMetadata]**](AssetMetadata.md) |   | [optional]
 **origin**| [**DamAssetOrigin**](DamAssetOrigin.md) |   |

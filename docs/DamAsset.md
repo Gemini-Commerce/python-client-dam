@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **created_at**| **datetime** |   | [optional] [readonly]
 **updated_at**| **datetime** |   | [optional] [readonly]
 **id**| **str** |   | [optional]
-**type**| [**DamAssetType**](DamAssetType.md) |  for more information please, see Model/DamAssetType.php  | [optional]
+**type**| [**DamAssetType**](DamAssetType.md) |  for more information please, see Model/DamAssetType.php  | [optional] [default to DamAssetType.UNKNOWN]
 **code**| **str** |   | [optional]
 **metadata**| [**List[AssetMetadata]**](AssetMetadata.md) |   | [optional]
 **grn**| **str** |   | [optional]

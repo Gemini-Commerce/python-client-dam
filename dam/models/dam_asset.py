@@ -19,15 +19,12 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from pydantic import BaseModel, StrictStr
-from pydantic import Field
 from dam.models.asset_metadata import AssetMetadata
 from dam.models.dam_asset_type import DamAssetType
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
+from typing import Optional, Set
+from typing_extensions import Self
 
 class DamAsset(BaseModel):
     """
@@ -36,18 +33,19 @@ class DamAsset(BaseModel):
     created_at: Optional[datetime] = Field(default=None, alias="createdAt")
     updated_at: Optional[datetime] = Field(default=None, alias="updatedAt")
     id: Optional[StrictStr] = None
-    type: Optional[DamAssetType] = None
+    type: Optional[DamAssetType] = DamAssetType.UNKNOWN
     code: Optional[StrictStr] = None
     metadata: Optional[List[AssetMetadata]] = None
     grn: Optional[StrictStr] = None
     public_url: Optional[StrictStr] = Field(default=None, alias="publicUrl")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["createdAt", "updatedAt", "id", "type", "code", "metadata", "grn", "publicUrl"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
@@ -60,7 +58,7 @@ class DamAsset(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of DamAsset from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -75,26 +73,35 @@ class DamAsset(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
+        excluded_fields: Set[str] = set([
+            "created_at",
+            "updated_at",
+            "additional_properties",
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-                "created_at",
-                "updated_at",
-            },
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in metadata (list)
         _items = []
         if self.metadata:
-            for _item in self.metadata:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_metadata in self.metadata:
+                if _item_metadata:
+                    _items.append(_item_metadata.to_dict())
             _dict['metadata'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of DamAsset from a dict"""
         if obj is None:
             return None
@@ -106,12 +113,17 @@ class DamAsset(BaseModel):
             "createdAt": obj.get("createdAt"),
             "updatedAt": obj.get("updatedAt"),
             "id": obj.get("id"),
-            "type": obj.get("type"),
+            "type": obj.get("type") if obj.get("type") is not None else DamAssetType.UNKNOWN,
             "code": obj.get("code"),
-            "metadata": [AssetMetadata.from_dict(_item) for _item in obj.get("metadata")] if obj.get("metadata") is not None else None,
+            "metadata": [AssetMetadata.from_dict(_item) for _item in obj["metadata"]] if obj.get("metadata") is not None else None,
             "grn": obj.get("grn"),
             "publicUrl": obj.get("publicUrl")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -29,8 +29,6 @@ Batch Upload Assets
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_batch_upload_assets_request import DamBatchUploadAssetsRequest
 from dam.models.dam_batch_upload_assets_response import DamBatchUploadAssetsResponse
@@ -105,8 +103,6 @@ Batch Upload Assets
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_batch_upload_assets_request import DamBatchUploadAssetsRequest
 from dam.models.dam_batch_upload_assets_response import DamBatchUploadAssetsResponse
@@ -181,8 +177,6 @@ Create Asset
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_create_asset_request import DamCreateAssetRequest
@@ -257,8 +251,6 @@ Create Asset
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_create_asset_request import DamCreateAssetRequest
@@ -333,8 +325,6 @@ Get Asset By Code
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_get_asset_by_code_request import DamGetAssetByCodeRequest
@@ -409,8 +399,6 @@ Get Asset By Code
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_get_asset_by_code_request import DamGetAssetByCodeRequest
@@ -485,8 +473,6 @@ List Assets
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_request import DamListAssetsRequest
 from dam.models.dam_list_assets_response import DamListAssetsResponse
@@ -561,8 +547,6 @@ List Assets
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_request import DamListAssetsRequest
 from dam.models.dam_list_assets_response import DamListAssetsResponse
@@ -637,8 +621,6 @@ List Assets By Codes
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_by_codes_request import DamListAssetsByCodesRequest
 from dam.models.dam_list_assets_by_codes_response import DamListAssetsByCodesResponse
@@ -713,8 +695,6 @@ List Assets By Codes
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_by_codes_request import DamListAssetsByCodesRequest
 from dam.models.dam_list_assets_by_codes_response import DamListAssetsByCodesResponse
@@ -789,8 +769,6 @@ List Assets By Ids
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_by_ids_request import DamListAssetsByIdsRequest
 from dam.models.dam_list_assets_by_ids_response import DamListAssetsByIdsResponse
@@ -865,8 +843,6 @@ List Assets By Ids
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_list_assets_by_ids_request import DamListAssetsByIdsRequest
 from dam.models.dam_list_assets_by_ids_response import DamListAssetsByIdsResponse
@@ -941,8 +917,6 @@ Update Asset
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_update_asset_request import DamUpdateAssetRequest
@@ -1017,8 +991,6 @@ Update Asset
 
 
 ```python
-import time
-import os
 import dam
 from dam.models.dam_asset import DamAsset
 from dam.models.dam_update_asset_request import DamUpdateAssetRequest
